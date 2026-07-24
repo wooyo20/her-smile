@@ -21,7 +21,7 @@ export default function First() {
                 <div className='hdmtWelcomeText'>· 今天也要玩得开心哦 ·</div>
                 <div className="hdmtWelcomeTip">不开心你直接揍下面这个人一顿</div>
                 <div className="hdmtImg" onClick={openModal} />
-                <div className="hdmtWelcomeGuide" >⬆️戳头像看看我心里在想啥⬆️</div>
+                {/* <div className="hdmtWelcomeGuide" >⬆️戳头像看看我心里在想啥⬆️</div> */}
                 <div className="hdmtWelcomeBtn">无数次重生，目标始终是你</div>
             </div>
             {/* 弹窗遮罩层 */}
