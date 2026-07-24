@@ -1,0 +1,71 @@
+.handmadePage {
+    width: 100%;
+    height: 100vh;
+    touch-action: 'none';
+    background-color: #FCF8E8;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    background: url('../../public/pindou.jpg') #FDEDCB;
+    background-size: cover;
+    background-position: center;
+    /* 图片居中显示 */
+    background-repeat: no-repeat;
+    /* 防止图片重复 */
+
+    .hdmtTitleConatiner {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .hdmtTitle {
+            width: 90%;
+            font-size: 2rem;
+            font-weight: 600;
+            color: brown;
+            text-align: center;
+        }
+
+        .hdmtTitleSec {
+            color: gray;
+        }
+    }
+
+    .hdmtWelcomeContainer {
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.75rem;
+
+        .hdmtWelcomeText {
+            color: rgb(253, 92, 119);
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .hdmtWelcomeTip {
+            color: rgb(180, 180, 180);
+        }
+
+        .hdmtImg {
+            height: 3rem;
+            width: 3rem;
+            border-radius: 1.5rem;
+            background: url('../../public/why.jpg');
+            background-size: cover;
+            cursor: pointer;
+            touch-action: 'none';
+            -webkit-tap-highlight-color: 'transparent';
+        }
+
+        .hdmtWelcomeBtn {
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: gray;
+        }
+    }
+}
