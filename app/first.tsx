@@ -14,7 +14,7 @@ export default function First() {
     return (
         <div className="handmadePage">
             <div className="hdmtTitleConatiner">
-                <div className="hdmtTitle">重生一世！万万没想到，她要和我拼豆</div>
+                <div className="hdmtTitle">重生一世！万万没想到，她答应和我拼豆</div>
                 <div className='hdmtTitleSec'>系统提示：恭喜宿主成功解锁双人拼豆剧本</div>
             </div>
             <div className="hdmtWelcomeContainer">
