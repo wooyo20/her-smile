@@ -7,7 +7,7 @@
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    background: url('../../public/pindou.jpg') #FDEDCB;
+    background: url('../../public/pindou2.jpg') #FDEDCB;
     background-size: cover;
     background-position: center;
     /* 图片居中显示 */
@@ -67,5 +67,58 @@
             font-size: 0.75rem;
             color: gray;
         }
+    }
+}
+
+.handmadePage.bg0 {
+    background-image: url('../../public/pindou.jpg');
+}
+.handmadePage.bg1 {
+    background-image: url('../../public/pindou1.jpg');
+}
+.handmadePage.bg2 {
+    background-image: url('../../public/pindou2.jpg');
+}
+
+
+.hdmtWelWhy {
+    background: rgba(255, 255, 255, 0.85);
+    /* 白色半透明背景 */
+    backdrop-filter: blur(12px);
+    /* 磨砂模糊 */
+    -webkit-backdrop-filter: blur(12px);
+    /* Safari 兼容 */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* 半透明边框增强玻璃感 */
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    /* 轻微阴影 */
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    border-radius: 1rem;
+    width: 85%;
+    font-size: 1.2rem;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hdmtPoetry {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 1rem;
+    width: 100%;
+
+    .verse {
+        text-align: center;
+    }
+
+    .author {
+        width: 100%;
+        text-align: right;
     }
 }

@@ -1,28 +1,93 @@
 "use client";
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import './styles/first.css'
 
 export default function First() {
     const [showModal, setShowModal] = useState(false);
-    const [test, setTest] = useState(0);
     const openModal = useCallback(() => {
         setShowModal(true);
-        setTest(prov => prov + 1);
     }, [])
 
+    const closeModal = useCallback(() => {
+        setShowModal(false);
+    }, [])
+
+    const [modalStep, setModalStep] = useState(0);
+
+    const modalContent = useMemo(() => {
+        if (modalStep === 0) {
+            return {
+                content: (
+                    <p style={{ margin: 0 }}>
+                        这里什么也没有，看到你我就大脑一片空白
+                    </p>
+                ),
+                btnText: '再看看',
+                btnClick: () => {
+                    setModalStep(1);
+                },
+            };
+        } else if (modalStep === 1) {
+            return {
+                content: (
+                    <div className='hdmtPoetry'>
+                        <div className="verse">你的裙子怎么穿的？</div>
+                        <div className="verse">你的眉毛怎么弯的？</div>
+                        <div className="verse">你的头发怎么盘的？</div>
+                        <div className="verse">记不清你，</div>
+                        <div className="verse">所以要见你，</div>
+                        <div className="verse">要再见你。</div>
+                        <div className="author">——冯唐《再见》</div>
+                    </div>
+                ),
+                btnText: '关闭',
+                btnClick: () => {
+                    setModalStep(0);
+                    closeModal();
+                },
+            };
+        }
+    }, [modalStep]);
+
+    const bgClassList = [
+        "bg0",
+        "bg1",
+        "bg2"
+    ];
+
+    const [colorIndex, setColorIndex] = useState(0);
+    const timer = useRef<NodeJS.Timeout>(null);
+
+    // 开启定时器，每10秒切换下标
+    useEffect(() => {
+        timer.current = setInterval(() => {
+            setColorIndex(prev => (prev + 1) % bgClassList.length);
+        }, 10000);
+
+        // 组件销毁清除定时器，防止内存泄漏
+        return () => {
+            if (timer.current) {
+                clearInterval(timer.current)
+            };
+        };
+    }, []);
+
+    const nextBg = useCallback(() => {
+        setColorIndex(prev => (prev + 1) % bgClassList.length);
+    }, [])
 
     return (
-        <div className="handmadePage">
+        <div className={`handmadePage ${bgClassList[colorIndex]}`}>
             <div className="hdmtTitleConatiner">
                 <div className="hdmtTitle">重生一世！万万没想到，她答应和我拼豆</div>
                 <div className='hdmtTitleSec'>系统提示：恭喜宿主成功解锁双人拼豆剧本</div>
             </div>
             <div className="hdmtWelcomeContainer">
-                <div className='hdmtWelcomeText'>· 今天也要玩得开心哦 ·</div>
+                <div className='hdmtWelcomeText' onClick={nextBg}>· 今天也要玩得开心哦 ·</div>
                 <div className="hdmtWelcomeTip">不开心你直接揍下面这个人一顿</div>
                 <div className="hdmtImg" onClick={openModal} />
                 <div className="hdmtWelcomeGuide" >⬆️可以戳⬆️</div>
-                <div className="hdmtWelcomeBtn">无数次重生，目标始终是你</div>
+                <div className="hdmtWelcomeBtn">剧本很长，想拉你慢慢演</div>
             </div>
             {/* 弹窗遮罩层 */}
             {showModal && (
@@ -39,20 +104,13 @@ export default function First() {
                     zIndex: 999
                 }} >
                     {/* 弹窗盒子 */}
-                    <div style={{
-                        background: '#fffef5',
-                        padding: '32px 40px',
-                        borderRadius: '16px',
-                        maxWidth: '85%',
-                        fontSize: '1.2rem',
-                        color: '#333',
-                        boxShadow: '0 6px 22px rgba(0,0,0,0.15)'
-                    }} onClick={(e) => e.stopPropagation()}>
-                        <p style={{ margin: 0 }}>
-                            这里什么也没有，看到你我就大脑一片空白
-                        </p>
+                    <div
+                        className='hdmtWelWhy'
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {modalContent?.content}
                         <button
-                            onClick={() => setShowModal(false)}
+                            onClick={() => modalContent?.btnClick?.()}
                             style={{
                                 marginTop: '20px',
                                 padding: '8px 22px',
@@ -64,7 +122,7 @@ export default function First() {
                                 fontSize: '1rem'
                             }}
                         >
-                            关闭
+                            {modalContent?.btnText}
                         </button>
                     </div>
                 </div>
