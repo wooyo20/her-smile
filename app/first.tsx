@@ -47,7 +47,7 @@ export default function First() {
                 },
             };
         }
-    }, [modalStep]);
+    }, [closeModal, modalStep]);
 
     const bgClassList = [
         "bg0",
@@ -58,32 +58,32 @@ export default function First() {
     const [colorIndex, setColorIndex] = useState(0);
     const timer = useRef<NodeJS.Timeout>(null);
 
-    // 开启定时器，每10秒切换下标
-    useEffect(() => {
-        timer.current = setInterval(() => {
-            setColorIndex(prev => (prev + 1) % bgClassList.length);
-        }, 10000);
+    // // 开启定时器，每10秒切换下标
+    // useEffect(() => {
+    //     timer.current = setInterval(() => {
+    //         setColorIndex(prev => (prev + 1) % bgClassList.length);
+    //     }, 10000);
 
-        // 组件销毁清除定时器，防止内存泄漏
-        return () => {
-            if (timer.current) {
-                clearInterval(timer.current)
-            };
-        };
-    }, []);
+    //     // 组件销毁清除定时器，防止内存泄漏
+    //     return () => {
+    //         if (timer.current) {
+    //             clearInterval(timer.current)
+    //         };
+    //     };
+    // }, [bgClassList.length]);
 
-    const nextBg = useCallback(() => {
-        setColorIndex(prev => (prev + 1) % bgClassList.length);
-    }, [])
+    // const nextBg = useCallback(() => {
+    //     setColorIndex(prev => (prev + 1) % bgClassList.length);
+    // }, [bgClassList.length])
 
     return (
         <div className={`handmadePage ${bgClassList[colorIndex]}`}>
             <div className="hdmtTitleConatiner">
-                <div className="hdmtTitle">重生一世！万万没想到，她答应和我拼豆</div>
-                <div className='hdmtTitleSec'>系统提示：恭喜宿主成功解锁双人拼豆剧本</div>
+                <div className="hdmtTitle">一觉醒来，全球人类羽毛球水平下降1000倍</div>
+                <div className='hdmtTitleSec'>系统提示：恭喜宿主成功解锁双人羽毛球剧本</div>
             </div>
             <div className="hdmtWelcomeContainer">
-                <div className='hdmtWelcomeText' onClick={nextBg}>· 今天也要玩得开心哦 ·</div>
+                <div className='hdmtWelcomeText'>· 今天也要玩得开心哦 ·</div>
                 <div className="hdmtWelcomeTip">不开心你直接揍下面这个人一顿</div>
                 <div className="hdmtImg" onClick={openModal} />
                 <div className="hdmtWelcomeGuide" >⬆️可以戳⬆️</div>

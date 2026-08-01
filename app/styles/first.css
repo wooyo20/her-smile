@@ -7,7 +7,7 @@
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    background: url('../../public/pindou2.jpg') #FDEDCB;
+    background: url('../../public/yumaoqiu.jpg') #FDEDCB;
     background-size: cover;
     background-position: center;
     /* 图片居中显示 */
@@ -70,7 +70,7 @@
     }
 }
 
-.handmadePage.bg0 {
+/* .handmadePage.bg0 {
     background-image: url('../../public/pindou.jpg');
 }
 .handmadePage.bg1 {
@@ -78,7 +78,7 @@
 }
 .handmadePage.bg2 {
     background-image: url('../../public/pindou2.jpg');
-}
+} */
 
 
 .hdmtWelWhy {
