@@ -29,7 +29,10 @@
         }
 
         .hdmtTitleSec {
+            margin-top: 0.5rem;
+            width: 90%;
             color: gray;
+            text-align: center;
         }
     }
 

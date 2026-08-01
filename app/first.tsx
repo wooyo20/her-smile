@@ -19,7 +19,7 @@ export default function First() {
             return {
                 content: (
                     <p style={{ margin: 0 }}>
-                        这里什么也没有，看到你我就大脑一片空白
+                        这里什么也没有，看到你就大脑一片空白
                     </p>
                 ),
                 btnText: '再看看',
@@ -79,15 +79,16 @@ export default function First() {
     return (
         <div className={`handmadePage ${bgClassList[colorIndex]}`}>
             <div className="hdmtTitleConatiner">
-                <div className="hdmtTitle">一觉醒来，全球人类羽毛球水平下降1000倍</div>
-                <div className='hdmtTitleSec'>系统提示：恭喜宿主成功解锁双人羽毛球剧本</div>
+                <div className="hdmtTitle">一觉醒来，全球人类羽毛球水平下降1000倍?</div>
+                <div className='hdmtTitleSec'>系统提示：恭喜宿主解锁羽毛球陪打主线任务</div>
+                <div className='hdmtTitleSec'>任务目标：精准喂球、遗憾落败</div>
             </div>
             <div className="hdmtWelcomeContainer">
                 <div className='hdmtWelcomeText'>· 今天也要玩得开心哦 ·</div>
                 <div className="hdmtWelcomeTip">不开心你直接揍下面这个人一顿</div>
                 <div className="hdmtImg" onClick={openModal} />
                 <div className="hdmtWelcomeGuide" >⬆️可以戳⬆️</div>
-                <div className="hdmtWelcomeBtn">剧本很长，想拉你慢慢演</div>
+                <div className="hdmtWelcomeBtn">一局终了，还有无数回合可期</div>
             </div>
             {/* 弹窗遮罩层 */}
             {showModal && (
