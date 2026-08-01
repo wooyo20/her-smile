@@ -80,8 +80,8 @@ export default function First() {
         <div className={`handmadePage ${bgClassList[colorIndex]}`}>
             <div className="hdmtTitleConatiner">
                 <div className="hdmtTitle">一觉醒来，全球人类羽毛球水平下降1000倍?</div>
-                <div className='hdmtTitleSec'>系统提示：恭喜宿主解锁羽毛球陪打主线任务</div>
-                <div className='hdmtTitleSec'>任务目标：精准喂球、遗憾落败</div>
+                <div className='hdmtTitleSec'>只有我完好保留全部实力</div>
+                <div className='hdmtTitleSec'>称霸世界没意思，只想当个靠谱的专属陪打！</div>
             </div>
             <div className="hdmtWelcomeContainer">
                 <div className='hdmtWelcomeText'>· 今天也要玩得开心哦 ·</div>
