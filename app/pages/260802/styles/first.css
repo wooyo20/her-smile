@@ -7,7 +7,7 @@
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    background: url('../../public/yumaoqiu.jpg') #FDEDCB;
+    background: url('../../../../public/yumaoqiu.jpg') #FDEDCB;
     background-size: cover;
     background-position: center;
     /* 图片居中显示 */
@@ -58,7 +58,7 @@
             height: 3rem;
             width: 3rem;
             border-radius: 1.5rem;
-            background: url('../../public/why.jpg');
+            background: url('../../../../public/why.jpg');
             background-size: cover;
             cursor: pointer;
             touch-action: 'none';
@@ -127,7 +127,7 @@
 }
 
 .hdmtDiurenImg {
-    background: url('../../public/diurenaaa.jpg');
+    background: url('../../../../public/diurenaaa.jpg');
     background-size: cover;
     width: 100%;
     height: 22rem;

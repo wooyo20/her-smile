@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import './styles/first.css'
 
-export default function First() {
+export default function Page() {
     const [showModal, setShowModal] = useState(true);
     const openModal = useCallback(() => {
         setShowModal(true);
