@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "肘击台风",
+  title: "🥊肘击台风🥊",
   description: "To 苏苏",
   viewport: {
     width: 'device-width',
