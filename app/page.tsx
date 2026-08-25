@@ -1,4 +1,4 @@
-import Page from "./pages/260808/page";
+import Page from "./pages/260825/page";
 
 export default function Home() {
 
